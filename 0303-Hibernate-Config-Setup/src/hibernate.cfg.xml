@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC 
+  "-//Hibernate/Hibernate Configuration DTD 3.0//EN" 
+  "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+  
+<!-- Version 8 MySQL hiberante-cfg.xml example for Hibernate 5 -->
+<hibernate-configuration>
+		  <session-factory>
+				    <property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+				    <property name="connection.url">jdbc:oracle:thin:@localhost:1521:xe</property>
+				    <property name="connection.username">system</property>
+				    <property name="connection.password">sekhar</property>
+				    
+	<!--Optional Proporties for Hibernate -->
+				    
+				<!-- Prepare the Query based on the mapping information for the underlying database.--> 			    
+				 <property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>	
+				
+				<!-- Inform Hibernate to display the query on the console it has generated internally -->        
+				    <property name="show_sql">true</property>
+				    
+				<!-- Inform Hibernate to display the query on the console it has generated internally in proper format -->   
+				    <property name="format_sql">true</property>
+				    
+				<!-- inform Hibernate to create/alter/drop the table -->
+				    <property name="hbm2ddl.auto">update</property>
+				    
+			  	 <!-- 
+			  	 	<property name="hbm2ddl.auto">update</property>
+				    <property name="hbm2ddl.auto">create</property>
+				    <property name="hbm2ddl.auto">validate</property>
+				    <property name="hbm2ddl.auto">create-drop</property>
+				    
+				 -->
+				    <mapping class="in.cg.model.Student"/>
+		  </session-factory>
+</hibernate-configuration>
